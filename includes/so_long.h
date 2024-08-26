@@ -6,7 +6,7 @@
 /*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 12:00:32 by clouaint          #+#    #+#             */
-/*   Updated: 2024/08/26 19:24:40 by clouaint         ###   ########.fr       */
+/*   Updated: 2024/08/26 20:07:49 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,6 @@ void	is_ber(const char *str);
 void	loading_textures(t_data *data);
 void	draw_tile(t_data *data, int i, int j);
 int 	get_screen_height(void);
+void	is_not_loaded(t_data *data);
+
 #endif

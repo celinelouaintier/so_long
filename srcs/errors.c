@@ -6,7 +6,7 @@
 /*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:00:22 by clouaint          #+#    #+#             */
-/*   Updated: 2024/08/26 18:37:52 by clouaint         ###   ########.fr       */
+/*   Updated: 2024/08/26 20:11:09 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,21 @@ void	check_map_charac(t_data *data)
 			j++;
 		}
 		i++;
+	}
+}
+
+void	is_not_loaded(t_data *data)
+{
+		if (!data->images->floor || !data->images->wall ||
+		!data->images->player[0] || !data->images->player[1] ||
+		!data->images->player[2] || !data->images->player[3] ||
+		!data->images->playerg[0] || !data->images->playerg[1] ||
+		!data->images->playerg[2] || !data->images->playerg[3] ||
+		!data->images->collect || !data->images->exit)
+	{
+		data->images = NULL;
+		ft_printf("Error\nNo images\n");
+		exit_game(data);
 	}
 }
 

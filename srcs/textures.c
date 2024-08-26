@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouaint <clouaint@student.42.fr>          #+#  +:+       +#+        */
+/*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-08-25 15:28:23 by clouaint          #+#    #+#             */
-/*   Updated: 2024-08-25 15:28:23 by clouaint         ###   ########.fr       */
+/*   Created: 2024/08/25 15:28:23 by clouaint          #+#    #+#             */
+/*   Updated: 2024/08/26 20:04:12 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	loading_textures(t_data *data)
 	data->images->playerg[3] = MLX_FTI(data->mlx, PLAYERG4, &width, &height);
 	data->images->collect = MLX_FTI(data->mlx, COLLECT, &width, &height);
 	data->images->exit = MLX_FTI(data->mlx, EXIT, &width, &height);
+	is_not_loaded(data);
 }
 
 void	draw_tile(t_data *data, int i, int j)
