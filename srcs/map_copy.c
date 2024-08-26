@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   map_copy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouaint <clouaint@student.42.fr>          #+#  +:+       +#+        */
+/*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-07-12 10:31:09 by clouaint          #+#    #+#             */
-/*   Updated: 2024-07-12 10:31:09 by clouaint         ###   ########.fr       */
+/*   Created: 2024/07/12 10:31:09 by clouaint          #+#    #+#             */
+/*   Updated: 2024/08/26 18:39:13 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 char	*copy_line(char *line, int width)
@@ -91,4 +92,20 @@ void	is_ber(const char *str)
 	exit(-1);
 }
 
-// TODO = fonction pour verifier que la taille de la map est pas plus grande que le fenetre
+int get_screen_height(void)
+{
+    Display *display;
+    int screen_num;
+    int screen_height;
+
+    display = XOpenDisplay(NULL);
+    if (!display)
+        return 600;  // Valeur par défaut si l'affichage échoue
+
+    screen_num = DefaultScreen(display);
+    screen_height = XDisplayHeight(display, screen_num);
+
+    XCloseDisplay(display);
+    return (screen_height);
+}
+

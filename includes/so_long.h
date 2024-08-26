@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouaint <clouaint@student.42.fr>          #+#  +:+       +#+        */
+/*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-06-27 12:00:32 by clouaint          #+#    #+#             */
-/*   Updated: 2024/07/09 16:57:58 by clouaint         ###   ########.fr       */
+/*   Created: 2024/06/27 12:00:32 by clouaint          #+#    #+#             */
+/*   Updated: 2024/08/26 19:24:40 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -85,5 +86,5 @@ int		finish_game(t_data *game);
 void	is_ber(const char *str);
 void	loading_textures(t_data *data);
 void	draw_tile(t_data *data, int i, int j);
-
+int 	get_screen_height(void);
 #endif

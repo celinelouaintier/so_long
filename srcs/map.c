@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouaint <clouaint@student.42.fr>          #+#  +:+       +#+        */
+/*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-07-02 16:08:05 by clouaint          #+#    #+#             */
-/*   Updated: 2024/07/09 17:00:44 by clouaint         ###   ########.fr       */
+/*   Created: 2024/07/02 16:08:05 by clouaint          #+#    #+#             */
+/*   Updated: 2024/08/26 18:16:57 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 int	map_size(t_data *data, char *file)
@@ -70,6 +71,7 @@ void	draw_map(t_data *data)
 	int	i;
 	int	j;
 
+
 	i = 0;
 	while (i < data->height)
 	{
@@ -80,5 +82,6 @@ void	draw_map(t_data *data)
 			j++;
 		}
 		i++;
-	}
+	}	
 }
+

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouaint <clouaint@student.42.fr>          #+#  +:+       +#+        */
+/*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-07-02 12:03:56 by clouaint          #+#    #+#             */
-/*   Updated: 2024/07/09 17:01:39 by clouaint         ###   ########.fr       */
+/*   Created: 2024/07/02 12:03:56 by clouaint          #+#    #+#             */
+/*   Updated: 2024/08/26 19:16:05 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	animate_player(t_data *data)
@@ -37,8 +38,6 @@ int	main(int argc, char **argv)
 	{
 		is_ber(argv[1]);
 		ft_memset(&data, 0, sizeof(t_data));
-		data.current_sprite = 0;
-		data.frame_count = 0;
 		read_map(&data, argv[1]);
 		find_initial_position(&data);
 		check_errors(&data);
@@ -48,7 +47,6 @@ int	main(int argc, char **argv)
 		loading_textures(&data);
 		data.window = mlx_new_window(data.mlx, data.width * 40,
 				data.height * 40, "so_long");
-		draw_map(&data);
 		mlx_hook(data.window, 17, 0, finish_game, &data);
 		mlx_hook(data.window, 2, 1L << 0, player_move, &data);
 		mlx_loop_hook(data.mlx, game_loop, &data);

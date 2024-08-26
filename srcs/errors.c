@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouaint <clouaint@student.42.fr>          #+#  +:+       +#+        */
+/*   By: clouaint <clouaint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-07-08 15:00:22 by clouaint          #+#    #+#             */
-/*   Updated: 2024/07/09 17:52:16 by clouaint         ###   ########.fr       */
+/*   Created: 2024/07/08 15:00:22 by clouaint          #+#    #+#             */
+/*   Updated: 2024/08/26 18:37:52 by clouaint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	is_map_closed(t_data *data)
@@ -97,6 +98,11 @@ void	check_errors(t_data *data)
 	is_map_closed(data);
 	check_map_charac(data);
 	check_map_double(data);
+	if (get_screen_height() < data->height * 40)
+	{
+		ft_printf("Error\nThe map is too big\n");
+		exit_game(data);
+	}
 	if (!test_map(data))
 	{
 		ft_printf("Error\nThe map is invalid.");
